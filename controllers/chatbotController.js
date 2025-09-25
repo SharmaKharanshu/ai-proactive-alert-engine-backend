@@ -1,5 +1,6 @@
 // controllers/chatbotController.js
 const { OpenAI } = require("openai");
+const employees = require("../data/employees");
 
 const client = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
