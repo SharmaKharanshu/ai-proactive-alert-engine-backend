@@ -9,18 +9,23 @@ const client = new OpenAI({
 async function chatWithBot(req, res) {
     const { message } = req.body;
 
-    // You can customize this prompt per your chatbot needs
-    const prompt = `
-    You are a helpful assistant in a manager portal.
-    Answer the following question concisely:
+    // Prepare a system prompt with the employee data
+    const systemPrompt = `
+You are a helpful assistant in a manager portal.
+Here is the current team data:
+${JSON.stringify(employees, null, 2)}
 
-    ${message}
-  `;
+Use this data to answer questions about resource availability, skills, workload, and role fit.
+Answer concisely and clearly.
+    `;
 
     try {
         const completion = await client.chat.completions.create({
             model: "gpt-4o-mini",
-            messages: [{ role: "user", content: prompt }],
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: message }
+            ],
             temperature: 0.5,
         });
 
