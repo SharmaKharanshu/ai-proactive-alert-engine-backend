@@ -3,6 +3,8 @@
 const employees = [
     { name: "Alice", estimatedHours: 20, capacity: 40, skills: ["React", "Node.js"] },
     { name: "Bob", estimatedHours: 38, capacity: 40, skills: ["Java", "Spring Boot"] },
+    { name: "Gurnish", estimatedHours: 30, capacity: 40, skills: ["Java", "Spring Boot"] },
+    { name: "Sahil", estimatedHours: 20, capacity: 40, skills: ["Java", "Spring Boot"] },
     { name: "Charlie", estimatedHours: 55, capacity: 40, skills: ["Python", "ML"] },
     { name: "David", estimatedHours: 10, capacity: 40, skills: ["UI/UX", "Figma"] },
     { name: "Eva", estimatedHours: 45, capacity: 40, skills: ["AWS", "DevOps"] },
