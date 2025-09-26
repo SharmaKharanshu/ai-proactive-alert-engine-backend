@@ -1,7 +1,7 @@
 require('dotenv').config();
 const { OpenAI } = require("openai");
 const employees = require("../data/employees");
-
+const project = require("../data/project")
 const client = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
 });
@@ -20,14 +20,18 @@ async function chatWithBot(req, res) {
 You are a helpful assistant in a manager portal.
 Here is the current team data:
 ${JSON.stringify(employees, null, 2)}
+Here is the current Projects Data:
+${JSON.stringify(project, null, 2)}
 
 Use this data to answer questions about resource availability, skills, workload, and role fit.
+and if i ask for projects look for available projects in Projects data
 Answer concisely and clearly.
 If you don't find the data in the team data that I provided, then don't assume things at all, please.
 Also, I will set the response in dangerouslySetInnerHTML={{ __html: msg.text }} />
 so please make the response in that presentable format only.
 Like if I'm asking you to list items, then make proper indentations. Do not do anything fancy.
 If a list comes, make use of line separators to differentiate between items.
+while giving complements separate them from actual meaningful data from the additional stuff you add
 `.trim();
 
     // Initialize conversation history

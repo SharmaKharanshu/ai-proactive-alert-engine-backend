@@ -50,3 +50,4 @@ const projects = [
     numberOfOpenings: 2
   }
 ];
+module.exports = projects;
