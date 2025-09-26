@@ -18,6 +18,7 @@ ${JSON.stringify(employees, null, 2)}
 
 Use this data to answer questions about resource availability, skills, workload, and role fit.
 Answer concisely and clearly.
+If you dont find the data in the team data that i Provided then dont assume things at all please.
     `;
 
     try {
