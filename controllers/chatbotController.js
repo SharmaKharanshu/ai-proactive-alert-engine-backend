@@ -1,4 +1,5 @@
 // controllers/chatbotController.js
+require('dotenv').config();
 const { OpenAI } = require("openai");
 const employees = require("../data/employees");
 

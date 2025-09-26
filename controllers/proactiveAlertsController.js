@@ -1,4 +1,5 @@
 // controllers/proactiveAlertsController.js
+require('dotenv').config();
 const { OpenAI } = require("openai");
 const employees = require("../data/employees");
 
@@ -40,6 +41,8 @@ async function getProactiveAlerts(req, res) {
            "criticalSummary": "short urgent summary if high severity exists, else empty string",
            "summary": "short overview of team workload"
          }
+         dont write anything extra just give me the response in json format which can be parsed properly
+         I dont want anything extra apart from the parsable json
     `;
 
         const completion = await client.chat.completions.create({
